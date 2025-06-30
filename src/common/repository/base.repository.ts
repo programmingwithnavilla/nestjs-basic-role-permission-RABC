@@ -12,7 +12,7 @@ export abstract class BaseRepository<T extends ObjectLiteral>
   }
 
   async findById(id: string): Promise<T | null> {
-    return this.repository.findOneBy({ id } as any);
+    return this.repository.findOneBy({ id: id } as any);
   }
 
   async findByCondition(condition: Partial<T>): Promise<T | null> {
